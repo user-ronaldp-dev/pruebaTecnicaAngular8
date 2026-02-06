@@ -1,0 +1,21 @@
+<div class="row justify-content-center">
+    <form [formGroup]="formDatosDelCliente" class="w-100">
+        <div class="col-sm-12 d-flex justify-content-center">
+            <img [src]="flblFoto.value" class="img-fluid mt-3 rounded" alt="fotoCliente" />
+        </div>
+        <div class="col-sm-12 d-flex justify-content-center">
+            <div class="mb-3 w-50">
+                <label for="flblNombre" class="form-label">Nombres:</label>
+                <input type="text" class="form-control" id="flblNombre" formControlName="flblNombre" disabled
+                     />
+            </div>
+        </div>
+        
+        <div class="col-sm-12 d-flex justify-content-center">
+            <div class="mb-3 w-50">
+                <label for="flblGenero" class="form-label">Genero:</label>
+                <input type="text" class="form-control" formControlName="flblGenero" disabled />
+            </div>
+        </div>
+    </form>
+</div>
