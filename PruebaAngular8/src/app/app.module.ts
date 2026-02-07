@@ -10,6 +10,7 @@ import { PantallaClienteComponent } from './components/pantalla-cliente/pantalla
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DatePipe } from '@angular/common';
     DatosDelClienteComponent,
     DatosDeRegistroClienteComponent,
     DatosDeContactoComponent,
-    PantallaClienteComponent
+    PantallaClienteComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

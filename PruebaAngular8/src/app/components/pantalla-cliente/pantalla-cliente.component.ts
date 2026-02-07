@@ -11,8 +11,6 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class PantallaClienteComponent implements OnInit {
 
-  cliente: any;
-
   datosclienteCargados : ParametrosDatosCliente = undefined;
   datosRegistroCargados: ParametrosRegistroCliente = undefined;
   datosContactoCargados : ParametrosDatosContacto = undefined;
