@@ -32,9 +32,9 @@ export class DatosDeContactoComponent implements OnInit {
 
   iniciarForm(){
     this.formDatosContacto = this.fb.group({
-      flblEmail : null,
-      flblTelefono: null,
-      flblDireccion: null
+      flblEmail : [{value: null, disabled: true}],
+      flblTelefono: [{value: null, disabled: true}],
+      flblDireccion: [{value: null, disabled: true}]
     });}
 
     cargarDatos(data: ParametrosDatosContacto){

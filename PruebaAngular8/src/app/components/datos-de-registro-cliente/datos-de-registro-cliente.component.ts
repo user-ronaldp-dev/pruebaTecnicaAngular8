@@ -36,7 +36,7 @@ export class DatosDeRegistroClienteComponent implements OnInit {
 
   iniciarForm(){
     this.formDatosRegistroDelCliente = this.fb.group({
-      flblFecha : ''
+      flblFecha : [{value: null, disabled: true}]
     })
   }
 

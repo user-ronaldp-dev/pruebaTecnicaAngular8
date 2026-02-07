@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ParametrosDatosCliente } from 'src/app/models/parametros-datos-cliente';
+import { zip } from 'rxjs';
+import { filter, tap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-datos-del-cliente',
@@ -32,24 +34,68 @@ export class DatosDelClienteComponent implements OnInit {
 
   ngOnInit() {
     this.iniciarForm();
+    const imagenStorage = localStorage.getItem('imagenStorage');
+    if(imagenStorage){
+      this.formDatosDelCliente.patchValue({
+        flblFotoStorage: JSON.parse(imagenStorage)
+      })
+    }
+    zip(this.formDatosDelCliente.statusChanges, this.formDatosDelCliente.valueChanges).pipe(
+      filter(([state, value]) => state === 'VALID'),
+      map(([state, value]) => value),
+      //tap(data => console.log(data))
+    ).subscribe(formValue => {
+      localStorage.setItem('imagenStorage', JSON.stringify(formValue.flblFotoStorage))
+    })
   }
 
   iniciarForm(){
     this.formDatosDelCliente = this.fb.group({
-      flblNombre : null,
+      flblNombre : [{value: null, disabled: true}],
       flblFoto: null,
-      flblGenero: null
-    });}
+      flblFotoStorage: null,
+      flblGenero: [{value: null, disabled: true}]
+    });
+    
+  }
 
     cargarDatos(data : ParametrosDatosCliente){
       this.formDatosDelCliente.patchValue({
         flblNombre: data.nombre,
         flblGenero: data.genero,
         flblFoto: data.foto
+      });
+    
+    }
+
+
+    addImage(event){
+      const file = event.target.files[0];
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+      
+      reader.onload = (event) =>{
+        this.formDatosDelCliente.patchValue({
+          flblFotoStorage: reader.result
+        });
+      }
+
+    }
+
+    removeImage(event){
+      this.formDatosDelCliente.patchValue({
+        flblFotoStorage : null
       })
     }
+
 
     get flblFoto(){
       return this.formDatosDelCliente.get('flblFoto');
     }
+
+    get flblFotoStorage(){
+      return this.formDatosDelCliente.get('flblFotoStorage');
+    }
+
+
 }
