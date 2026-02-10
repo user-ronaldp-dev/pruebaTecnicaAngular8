@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ParametrosDatosCliente } from 'src/app/models/parametros-datos-cliente';
 import { zip } from 'rxjs';
-import { filter, tap, map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-datos-del-cliente',

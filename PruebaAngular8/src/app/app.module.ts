@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { AuthComponent } from './components/auth/auth.component';
+import { ToastNotificationComponent } from './components/toast-notification/toast-notification.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AuthComponent } from './components/auth/auth.component';
     DatosDeRegistroClienteComponent,
     DatosDeContactoComponent,
     PantallaClienteComponent,
-    AuthComponent
+    AuthComponent,
+    ToastNotificationComponent
   ],
   imports: [
     BrowserModule,

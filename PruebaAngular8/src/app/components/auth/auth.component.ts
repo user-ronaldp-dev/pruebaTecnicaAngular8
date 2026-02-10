@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class AuthComponent implements OnInit {
 
   formLogin: FormGroup;
   constructor(private fb : FormBuilder, private authService: AuthService,
-    private router : Router
+    private router : Router, 
+    private notificationService : NotificationService
   ) { }
 
   ngOnInit() {
@@ -47,10 +49,11 @@ export class AuthComponent implements OnInit {
       .subscribe(
         response => {
           localStorage.setItem('token', response.token);
+          this.notificationService.success('Login Exitoso');
           this.router.navigate(['/dashboard']);
         },
         error => {
-          console.log('Error en login:')
+          this.notificationService.error('Error al iniciar sesion');
         }
       )
   }
