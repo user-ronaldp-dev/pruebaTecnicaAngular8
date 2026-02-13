@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ParametrosDatosCliente } from 'src/app/models/parametros-datos-cliente';
 import { zip } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { ParametrosDatosCliente } from 'src/app/models/parametros-datos-cliente';
+import { BannerNotificationService } from 'src/app/services/banner-notification.service';
 
 @Component({
   selector: 'app-datos-del-cliente',
@@ -28,7 +29,7 @@ export class DatosDelClienteComponent implements OnInit {
   }
 
 
-  constructor(private fb : FormBuilder) {
+  constructor(private fb : FormBuilder, private notificationService : BannerNotificationService) {
 
    }
 
@@ -78,6 +79,7 @@ export class DatosDelClienteComponent implements OnInit {
         this.formDatosDelCliente.patchValue({
           flblFotoStorage: reader.result
         });
+        this.notificationService.success('Imagen Actualizada con éxito');
       }
 
     }
@@ -96,6 +98,5 @@ export class DatosDelClienteComponent implements OnInit {
     get flblFotoStorage(){
       return this.formDatosDelCliente.get('flblFotoStorage');
     }
-
 
 }

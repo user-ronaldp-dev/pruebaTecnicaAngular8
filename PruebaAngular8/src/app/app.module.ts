@@ -3,15 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DatosDelClienteComponent } from './components/datos-del-cliente/datos-del-cliente.component';
-import { DatosDeRegistroClienteComponent } from './components/datos-de-registro-cliente/datos-de-registro-cliente.component';
-import { DatosDeContactoComponent } from './components/datos-de-contacto/datos-de-contacto.component';
-import { PantallaClienteComponent } from './components/pantalla-cliente/pantalla-cliente.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-import { AuthComponent } from './components/auth/auth.component';
-import { ToastNotificationComponent } from './components/toast-notification/toast-notification.component';
+
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ToastNotificationComponent } from './custom/toast-notification/toast-notification.component';
+import { DatosDeContactoComponent } from './dashboard/components/datos-de-contacto/datos-de-contacto.component';
+import { DatosDeRegistroClienteComponent } from './dashboard/components/datos-de-registro-cliente/datos-de-registro-cliente.component';
+import { DatosDelClienteComponent } from './dashboard/components/datos-del-cliente/datos-del-cliente.component';
+import { LoginComponent } from './login/login.component';
+import { BannerNotificationComponent } from './custom/banner-notification/banner-notification.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './dashboard/components/navbar/navbar.component';   
 
 @NgModule({
   declarations: [
@@ -19,16 +25,21 @@ import { ToastNotificationComponent } from './components/toast-notification/toas
     DatosDelClienteComponent,
     DatosDeRegistroClienteComponent,
     DatosDeContactoComponent,
-    PantallaClienteComponent,
-    AuthComponent,
-    ToastNotificationComponent
+    ToastNotificationComponent,
+    DashboardComponent,
+    LoginComponent,
+    BannerNotificationComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule, 
-    HttpClientModule
+    HttpClientModule,
+    
+    
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

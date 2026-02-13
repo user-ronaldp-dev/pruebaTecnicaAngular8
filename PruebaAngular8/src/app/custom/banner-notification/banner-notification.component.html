@@ -1,0 +1,9 @@
+<div class="banner-container">
+  <div *ngFor="let notification of notifications" 
+       class="banner banner-{{notification.type}}"
+       [@slideDown]>
+    <span class="banner-icon">!</span>
+    {{ notification.message }}
+    <button (click)="removeNotification(notification.id)" class="banner-close">×</button>
+  </div>
+</div>
