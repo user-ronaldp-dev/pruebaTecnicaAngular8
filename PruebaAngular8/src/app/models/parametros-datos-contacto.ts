@@ -1,5 +1,7 @@
+import { Direccion } from "./direccion";
+
 export interface ParametrosDatosContacto{
-    telefono: any,
-    email: any,
-    direccion: any
+    telefono: string,
+    email: string,
+    direccion: Direccion
 }

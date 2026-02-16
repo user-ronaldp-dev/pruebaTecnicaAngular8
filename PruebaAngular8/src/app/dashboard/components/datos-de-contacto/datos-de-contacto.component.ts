@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ModalInfoComponent } from 'src/app/custom/modal-info/modal-info.component';
 import { ParametrosDatosContacto } from 'src/app/models/parametros-datos-contacto';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-datos-de-contacto',
@@ -24,10 +26,18 @@ export class DatosDeContactoComponent implements OnInit {
     
    }
  }
+
+ @ViewChild('modalInfo', {static: false}) modalInfo!: ModalInfoComponent;
+
 constructor(private fb : FormBuilder) { }
 
 ngOnInit() {
 this.iniciarForm();
+}
+
+ngAfterViewInit() {
+  const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
 }
 
 iniciarForm(){
@@ -41,8 +51,17 @@ cargarDatos(data: ParametrosDatosContacto){
  this.formDatosContacto.patchValue({
    flblEmail: data.email,
    flblTelefono: data.telefono,
-   flblDireccion: data.direccion
+   flblDireccion: `${data.direccion.country}  - ${data.direccion.city} | ${data.direccion.street.number} - ${data.direccion.street.name}`
  })
+}
+
+abrirModal(){
+  const informacion = {
+    titulo: 'Información de Dirección Completa:',
+    datosContacto: this._parametrosComponent && this._parametrosComponent.direccion
+  };
+  
+  this.modalInfo.abrir(informacion);
 }
 
 }

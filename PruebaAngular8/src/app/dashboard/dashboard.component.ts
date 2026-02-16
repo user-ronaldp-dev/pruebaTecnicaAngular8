@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
       this.datosContactoCargados = {
         telefono: response.results[0].phone,
         email: response.results[0].email,
-        direccion: `${response.results[0].location.street.number} - ${response.results[0].location.street.name}`
+        direccion: response.results[0].location
       }
       this.datosRegistroCargados = {
         fecha: response.results[0].registered.date

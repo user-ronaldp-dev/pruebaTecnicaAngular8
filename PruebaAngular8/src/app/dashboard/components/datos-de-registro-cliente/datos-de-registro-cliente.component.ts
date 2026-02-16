@@ -42,7 +42,7 @@ export class DatosDeRegistroClienteComponent implements OnInit {
 
   cargarDatos(data : ParametrosRegistroCliente){
     this.formDatosRegistroDelCliente.patchValue({
-      flblFecha: this.datePipe.transform(data.fecha, 'dd/MM/yyyy')
+      flblFecha: this.datePipe.transform(data.fecha, 'dd/MM/yyyy HH:mm:ss')
     })
   }
 

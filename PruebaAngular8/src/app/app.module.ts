@@ -18,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { BannerNotificationComponent } from './custom/banner-notification/banner-notification.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './dashboard/components/navbar/navbar.component';   
+import { MatTabsModule } from '@angular/material/tabs';
+import { ModalInfoComponent } from './custom/modal-info/modal-info.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { NavbarComponent } from './dashboard/components/navbar/navbar.component'
     LoginComponent,
     BannerNotificationComponent,
     NavbarComponent,
+    ModalInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { NavbarComponent } from './dashboard/components/navbar/navbar.component'
     FormsModule,
     ReactiveFormsModule, 
     HttpClientModule,
+    MatTabsModule
     
     
   ],

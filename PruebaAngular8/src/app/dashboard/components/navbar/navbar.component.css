@@ -18,10 +18,12 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
+    padding-left: 5rem;
   }
   
   .navbar-actions {
     margin-left: auto;
+    padding-right: 5rem;
   }
   
   .btn-logout {

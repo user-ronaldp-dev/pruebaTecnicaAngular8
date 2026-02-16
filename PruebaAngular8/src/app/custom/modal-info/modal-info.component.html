@@ -1,0 +1,38 @@
+<div class="modal fade" #modalElement tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{datos?.titulo}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+              <strong>País:</strong> {{datos?.datosContacto?.country || 'No especificado'}}
+            </div>
+            <div class="mb-3">
+                <strong>Estado:</strong> {{datos?.datosContacto?.state || 'No especificado'}}
+              </div>
+            <div class="mb-3">
+              <strong>Ciudad:</strong> {{datos?.datosContacto?.city || 'No especificado'}}
+            </div>
+            <div class="mb-3">
+              <strong>Código Postal:</strong> {{datos?.datosContacto?.postcode || 'No especificado'}}
+            </div>
+            <div class="mb-3">
+              <strong>Calle:</strong> {{datos?.datosContacto?.street?.number}} - {{datos?.datosContacto?.street?.name || 'No especificado'}}
+            </div>
+            <div class="mb-3">
+              <strong>Coordenadas:</strong> 
+              {{datos?.datosContacto?.coordinates?.latitude || 'N/A'}}, {{datos?.datosContacto?.coordinates?.longitude || 'N/A'}}
+            </div>
+            <div class="mb-3">
+                <strong>Zona Horaria:</strong> 
+                {{datos?.datosContacto?.timezone?.offset || 'N/A'}} - {{datos?.datosContacto?.timezone?.description || 'N/A'}}
+              </div>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="cerrar()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
