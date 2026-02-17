@@ -20,6 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './dashboard/components/navbar/navbar.component';   
 import { MatTabsModule } from '@angular/material/tabs';
 import { ModalInfoComponent } from './custom/modal-info/modal-info.component';
+import { MatIconModule } from '@angular/material/icon';
+import { InputWithIconComponent } from './custom/input-with-icon/input-with-icon.component';
+import { ErrorMessageFormComponent } from './custom/error-message-form/error-message-form.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,8 @@ import { ModalInfoComponent } from './custom/modal-info/modal-info.component';
     BannerNotificationComponent,
     NavbarComponent,
     ModalInfoComponent,
+    InputWithIconComponent,
+    ErrorMessageFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { ModalInfoComponent } from './custom/modal-info/modal-info.component';
     FormsModule,
     ReactiveFormsModule, 
     HttpClientModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule
     
     
   ],

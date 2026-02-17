@@ -40,3 +40,9 @@
   .btn-logout:hover {
     background-color: #0EC7C4;
   }
+
+  .btn-logout {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

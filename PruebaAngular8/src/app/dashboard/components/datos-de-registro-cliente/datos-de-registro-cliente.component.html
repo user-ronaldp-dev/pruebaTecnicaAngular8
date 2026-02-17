@@ -1,10 +1,10 @@
 <div class="row justify-content-center">
     <form [formGroup]="formDatosRegistroDelCliente">
-        <div class="col-sm-12 d-flex justify-content-center">
-            <div class="mb-3 w-50">
-                Fecha de Registro:
-                <input type="text" class="form-control" formControlName="flblFecha" />
-            </div>
-        </div>
+        <app-input-with-icon
+            icon="event"
+            label="Fecha de Registro:"
+            id="flblFecha">
+            <input type="text" class="form-control" formControlName="flblFecha" />
+        </app-input-with-icon>
     </form>
 </div>

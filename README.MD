@@ -33,6 +33,10 @@ El Dashboard carga la información del API y la distribuye mediante `@Input` a l
 - Datos de registro del cliente
 - Datos de contacto del cliente
 
+### Flujo de Datos con @ViewChild
+
+El componente **DatosDeContactoComponent** carga la información completa de la Dirección (país, estado, ciudad, calles, codigo postal, coordenadas y zona horarias) accediendo al método `abrir()` del componente **ModalInfoComponent** por medio de `@ViewChild`.
+
 
 ### Flujo de Datos con @Output
 

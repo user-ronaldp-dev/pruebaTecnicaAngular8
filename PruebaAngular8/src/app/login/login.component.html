@@ -10,13 +10,10 @@
             </div>
 
         </div>
-        <div *ngIf="flblEmail?.hasError('required') && flblEmail?.touched"
-            class="col-sm-6 d-flex justify-content-center 
-            align-items-center text-center my-2 bg-custom-red text-white font-bold p-2 text-sm w-50 mx-auto
-            ">
-            El correo es obligatorio
-        </div>
-
+        <app-error-message-form 
+            [control]="flblEmail" 
+            [errorMessage]="' (*) El correo es obligatorio'">
+        </app-error-message-form>
 
         <div class="col-sm-12 d-flex justify-content-center">
             <div class="mb-3 w-50">
@@ -25,18 +22,16 @@
             </div>
 
         </div>
-        <div *ngIf="flblPassword?.hasError('required') && flblPassword?.touched"
-            class="col-sm-6 d-flex justify-content-center 
-            align-items-center text-center my-2 bg-custom-red text-white font-bold p-2 text-sm w-50 mx-auto
-            ">
-            El password es obligatorio
-        </div>
+        <app-error-message-form 
+            [control]="flblPassword" 
+            [errorMessage]="' (*) El password es obligatorio'">
+        </app-error-message-form>
+
         <div class="col-sm-12 d-flex justify-content-center mt-3">
-            <button class="btn btn-secondary w-50" type="submit">
-                Iniciar Sesion
+            <button class="btn btn-secondary w-50 d-flex align-items-center justify-content-center gap-2" type="submit">
+                <mat-icon>login</mat-icon>
+                <span>Iniciar Sesion</span>
             </button>
-
-
         </div>
 
     </form>

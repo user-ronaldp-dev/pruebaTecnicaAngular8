@@ -1,37 +1,35 @@
 <div class="row justify-content-center">
     <form [formGroup]="formDatosContacto">
-        <div class="col-sm-12 d-flex justify-content-center">
-            <div class="mb-3 w-50">
-                Email:
-                <input type="text" class="form-control" formControlName="flblEmail" />
+
+        <app-input-with-icon
+            icon="email"
+            label="Email:"
+            id="flblEmail">
+            <input type="text" class="form-control" formControlName="flblEmail" />
+        </app-input-with-icon>
+
+        <app-input-with-icon
+            icon="phone"
+            label="Telefono:"
+            id="flblTelefono">
+            <input type="text" class="form-control" formControlName="flblTelefono" />
+        </app-input-with-icon>
+
+        <app-input-with-icon
+            icon="home"
+            label="Direccion:"
+            id="flblDireccion">
+            <div class="d-flex align-items-center gap-2">
+                <input type="text" class="form-control" formControlName="flblDireccion" />
+                <button type="button"  class="btn rounded-circle p-0"
+                style="width: 35px; height: 35px; flex-shrink: 0; background-color: #0E93C7; color: white;"
+                 (click)="abrirModal()"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Información de Dirección completa">
+                    <strong>i</strong>
+                </button>
             </div>
-        </div>
-        <div class="col-sm-12 d-flex justify-content-center">
-            <div class="mb-3 w-50">
-                Telefono:
-                <input type="text" class="form-control" formControlName="flblTelefono" />
-            </div>
-        </div>
-        <!--div class="col-sm-12 d-flex justify-content-center">
-        <div class="mb-3 w-50">
-            Direccion:
-            <input type="text"  class="form-control" formControlName="flblDireccion" />
-        </div>
-    </div-->
-        <div class="col-sm-12 d-flex justify-content-center">
-            <div class="mb-3 w-50">
-                Direccion:
-                <div class="d-flex align-items-center gap-2">
-                    <input type="text" class="form-control" formControlName="flblDireccion" />
-                    <button type="button"  class="btn rounded-circle p-0"
-                    style="width: 35px; height: 35px; flex-shrink: 0; background-color: #0E93C7; color: white;"
-                     (click)="abrirModal()"
-                        data-bs-toggle="tooltip" data-bs-placement="top" title="Información de Dirección completa">
-                        <strong>i</strong>
-                    </button>
-                </div>
-            </div>
-        </div>
+        </app-input-with-icon>
+        
     </form>
 </div>
 <app-modal-info #modalInfo></app-modal-info>
