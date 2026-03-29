@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {tap} from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,11 @@ import {tap} from 'rxjs/operators';
 export class AuthService {
 
   private apiUrl = 'https://reqres.in/api/login';
+  envs = environment;
   
   private cabeceras : HttpHeaders = new HttpHeaders(
     {'Content-Type' : 'application/json',
-   'x-api-key': 'reqres_4555547eb0744fdeb5b2bb999c3cf7c4'
+   'x-api-key': `${this.envs.apikeyLogin}`
   })
 
   constructor(private http: HttpClient) { }

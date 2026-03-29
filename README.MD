@@ -8,6 +8,11 @@ La aplicación posee 2 pantallas principales:
 - **Dashboard** con la información del usuario
 
 
+## Configuracion Previa
+En `src/environments/environments.ts` agregar el token
+de https://reqres.in/api/login en la variable `apikeyLogin`
+
+
 ## Inicio de Sesion
 1.- Usuario: eve.holt@reqres.in
 2.- Password: cityslicka  
